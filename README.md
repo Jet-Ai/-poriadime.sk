@@ -1,2 +1,2 @@
-# -poriadime.sk
+# Poriadime.sk
     PORIADIME. — Vy nemusíte.
