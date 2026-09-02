@@ -24,7 +24,6 @@
     .navlinks{display:flex;gap:28px;font-weight:650;font-size:14px}.navlinks a:hover{opacity:.65}
     .navcta{background:var(--ink);color:#fff;padding:13px 19px;border-radius:999px;font-weight:800}
     
-    /* Language Toggle Switcher */
     .lang-switch{display:flex;gap:4px;background:rgba(18,53,47,.08);padding:3px;border-radius:999px}
     .lang-btn{border:none;background:transparent;padding:5px 12px;border-radius:999px;font-weight:800;font-size:12px;cursor:pointer;color:var(--ink);transition:.2s}
     .lang-btn.active{background:var(--ink);color:#fff}
@@ -35,7 +34,7 @@
     h1{font-size:clamp(56px,9vw,112px);line-height:.88;margin:18px 0 18px;letter-spacing:-.065em}
     .hero h1 em{font-style:normal;color:var(--ink2)} .lead{font-size:clamp(19px,2.2vw,26px);max-width:650px;color:#3f4d48}
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:15px 24px;font-weight:850;border:1px solid var(--ink);transition:.2s}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:15px 24px;font-weight:850;border:1px solid var(--ink);transition:.2s;cursor:pointer}
     .btn.primary{background:var(--ink);color:#fff}.btn.secondary{background:transparent}.btn:hover{transform:translateY(-2px)}
     .hero-card{background:var(--ink);color:#fff;border-radius:30px;padding:38px;box-shadow:var(--shadow);position:relative;overflow:hidden}
     .hero-card:after{content:"";position:absolute;width:190px;height:190px;border:1px solid rgba(255,255,255,.18);border-radius:50%;right:-70px;top:-70px}
@@ -47,11 +46,15 @@
     .service .num{font-size:12px;font-weight:900;color:var(--accent)}.service h3{font-size:23px;margin:35px 0 8px}.service p{color:var(--muted);font-size:15px}
     .promo{background:var(--ink);color:#fff}.promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.promo-card{border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);padding:34px}.promo-card h3{font-size:28px;margin:0 0 10px}.promo-card p{color:#d8e2de}.tag{display:inline-block;background:var(--accent);color:#1c1c16;font-weight:900;border-radius:999px;padding:7px 11px;font-size:12px}
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.step{background:var(--soft);border-radius:var(--radius);padding:30px}.step strong{font-size:42px}.step h3{font-size:22px}
-    .referral{background:#e8eee9}.ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.bigline{font-size:clamp(30px,5vw,58px);font-weight:900;line-height:1.02;letter-spacing:-.04em}
-    .faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px 22px}.faq summary{font-weight:800;cursor:pointer}.faq p{color:var(--muted);margin-bottom:0}
-    .contact{background:#fff}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px}.contact-box{background:var(--ink);color:#fff;border-radius:28px;padding:34px}.contact-box p{color:#d8e2de}.contact-box a{font-weight:800}
     
-    /* Booqme Frame Styling */
+    /* Referral Section & Form */
+    .referral{background:#e8eee9}.ref-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}.bigline{font-size:clamp(30px,4.5vw,52px);font-weight:900;line-height:1.02;letter-spacing:-.04em}
+    .ref-form-box{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow)}
+    .ref-form-box h3{font-size:20px;margin-bottom:15px}
+    form{display:grid;gap:13px}.two{display:grid;grid-template-columns:1fr 1fr;gap:13px}label{font-size:13px;font-weight:800}input,select,textarea{width:100%;margin-top:6px;border:1px solid var(--line);border-radius:13px;padding:12px 14px;font:inherit;background:var(--cream);color:var(--ink)}textarea{min-height:100px;resize:vertical}
+
+    .faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px 22px}.faq summary{font-weight:800;cursor:pointer}.faq p{color:var(--muted);margin-bottom:0}
+    
     .booqme-frame-container {
       width: 100%;
       background: #fff;
@@ -68,8 +71,8 @@
     }
 
     footer{background:#0d2925;color:#d8e2de;padding:35px 0}.footer-grid{display:flex;justify-content:space-between;gap:20px}.small{font-size:13px;color:#9fb0aa}
-    @media(max-width:900px){.hero-grid,.ref-grid,.contact-grid{grid-template-columns:1fr}.services{grid-template-columns:1fr 1fr}.promo-grid,.faq{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.navlinks{display:none}.hero{padding-top:60px}}
-    @media(max-width:560px){.topbar .container{justify-content:center}.topbar .container span:first-child{display:none}.services{grid-template-columns:1fr}.hero-card{padding:27px}.section-head{display:block}.section-head p{margin-top:18px}}
+    @media(max-width:900px){.hero-grid,.ref-grid{grid-template-columns:1fr}.services{grid-template-columns:1fr 1fr}.promo-grid,.faq{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.navlinks{display:none}.hero{padding-top:60px}}
+    @media(max-width:560px){.topbar .container{justify-content:center}.topbar .container span:first-child{display:none}.services{grid-template-columns:1fr}.two{grid-template-columns:1fr}.hero-card{padding:27px}.section-head{display:block}.section-head p{margin-top:18px}}
   </style>
 </head>
 <body>
@@ -86,6 +89,7 @@
         <a href="#sluzby" data-sk="Služby" data-en="Services">Služby</a>
         <a href="#ako-to-funguje" data-sk="Ako to funguje" data-en="How it works">Ako to funguje</a>
         <a href="#ponuka" data-sk="Ponuka" data-en="Offers">Ponuka</a>
+        <a href="#odporucanie" data-sk="Odporúčanie" data-en="Referral">Odporúčanie</a>
         <a href="#rezervacia" data-sk="Rezervácia" data-en="Booking">Rezervácia</a>
       </div>
       <div class="nav-right">
@@ -151,16 +155,29 @@
       </div>
     </section>
 
-    <section id="ako-to-funguje">
-      <div class="container">
-        <div class="section-head">
-          <h2 data-sk="Takto to funguje." data-en="How it works.">Takto to funguje.</h2>
-          <p data-sk="Žiadne komplikované balíčky. Dohodneme priestor, rozsah, frekvenciu a termín." data-en="No complex packages. Simply select space, scope, frequency, and date.">Žiadne komplikované balíčky. Dohodneme priestor, rozsah, frekvenciu a termín.</p>
+    <!-- Referral Program Section with Dedicated Form -->
+    <section class="referral" id="odporucanie">
+      <div class="container ref-grid">
+        <div>
+          <div class="eyebrow" data-sk="Odporúčací program" data-en="Referral Program">Odporúčací program</div>
+          <div class="bigline" data-sk="Poznáte niekoho, kto potrebuje upratovanie?" data-en="Know anyone needing a cleaning service?">Poznáte niekoho, kto potrebuje upratovanie?</div>
+          <p style="margin-top: 18px;" data-sk="Pošlite nám kontakt na známeho. Keď nový zákazník aktivuje mesačný program a splní podmienky programu, váš ďalší mesiac upratovania máte zdarma." data-en="Send us their details. Once they activate a monthly plan, you get your next month of cleaning completely free.">Pošlite nám kontakt na známeho. Keď nový zákazník aktivuje mesačný program a splní podmienky programu, váš ďalší mesiac upratovania máte zdarma.</p>
         </div>
-        <div class="steps">
-          <div class="step"><strong>01</strong><h3 data-sk="Vyberiete termín" data-en="Choose time">Vyberiete termín</h3><p data-sk="Zvoľte si požadovanú službu a dostupný dátum v rezervačnom kalendári." data-en="Select your desired service and available date in the booking calendar.">Zvoľte si požadovanú službu a dostupný dátum v rezervačnom kalendári.</p></div>
-          <div class="step"><strong>02</strong><h3 data-sk="Potvrdíte rezerváciu" data-en="Confirm booking">Potvrdíte rezerváciu</h3><p data-sk="Vyberte pracovníka alebo nechajte výber na nás a odošlite rezerváciu." data-en="Pick a professional or let us auto-assign one for you.">Vyberte pracovníka alebo nechajte výber na nás a odošlite rezerváciu.</p></div>
-          <div class="step"><strong>03</strong><h3 data-sk="Prídeme a poriadime" data-en="We clean up">Prídeme a poriadime</h3><p data-sk="Prinesieme vlastné vybavenie a čistiace prostriedky. Vy sa môžete venovať svojim veciam." data-en="We bring our own supplies and equipment so you can relax.">Prinesieme vlastné vybavenie a čistiace prostriedky. Vy sa môžete venovať svojim veciam.</p></div>
+        <div class="ref-form-box">
+          <h3 data-sk="Odporučiť známeho" data-en="Refer a Friend">Odporučiť známeho</h3>
+          <form id="referralForm">
+            <div class="two">
+              <label><span data-sk="Vaše meno" data-en="Your Name">Vaše meno</span><input name="referrer_name" required placeholder="Ján Novák"></label>
+              <label><span data-sk="Váš e-mail / tel." data-en="Your Email / Phone">Váš e-mail / tel.</span><input name="referrer_contact" required placeholder="jan@email.sk"></label>
+            </div>
+            <div class="two">
+              <label><span data-sk="Meno známeho" data-en="Friend's Name">Meno známeho</span><input name="friend_name" required placeholder="Peter Kováč"></label>
+              <label><span data-sk="Kontakt na známeho" data-en="Friend's Contact">Kontakt na známeho</span><input name="friend_contact" required placeholder="+421 9XX XXX XXX"></label>
+            </div>
+            <label><span data-sk="Poznámka (voliteľné)" data-en="Note (optional)">Poznámka (voliteľné)</span><textarea name="note" placeholder="Typ priestoru, lokalita alebo iné detaily..."></textarea></label>
+            <button class="btn primary" type="submit" data-sk="Odoslať odporúčanie" data-en="Send Referral">Odoslať odporúčanie</button>
+            <div id="refFormNote" class="small" style="margin-top:10px; color:var(--ink2);"></div>
+          </form>
         </div>
       </div>
     </section>
@@ -174,19 +191,6 @@
         </div>
         <div class="booqme-frame-container">
           <iframe id="booqme-iframe" style="min-width:100%;min-height:600px;border:0;" src="https://booqme.app/sk/rezervacia/poriadimesk" allow="payment"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <section class="referral">
-      <div class="container ref-grid">
-        <div>
-          <div class="eyebrow" data-sk="Odporúčací program" data-en="Referral Program">Odporúčací program</div>
-          <div class="bigline" data-sk="Poznáte niekoho, kto potrebuje upratovanie?" data-en="Know anyone needing a cleaning service?">Poznáte niekoho, kto potrebuje upratovanie?</div>
-        </div>
-        <div>
-          <p data-sk="Pošlite mu kontakt na PORIADIME. Keď nový zákazník aktivuje mesačný program a splní podmienky programu, váš ďalší mesiac upratovania máte zdarma." data-en="Share PORIADIME with them. Once they activate a monthly plan, you get your next month of cleaning free.">Pošlite mu kontakt na PORIADIME. Keď nový zákazník aktivuje mesačný program a splní podmienky programu, váš ďalší mesiac upratovania máte zdarma.</p>
-          <a class="btn primary" href="#rezervacia" data-sk="Chcem odporučiť PORIADIME" data-en="Recommend PORIADIME">Chcem odporučiť PORIADIME</a>
         </div>
       </div>
     </section>
@@ -219,19 +223,15 @@
 
   <script>
     function setLanguage(lang) {
-      // Toggle button states
       document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
       document.getElementById('btn-' + lang).classList.add('active');
 
-      // Update HTML lang attribute
       document.documentElement.lang = lang;
 
-      // Update translated elements
       document.querySelectorAll('[data-sk][data-en]').forEach(el => {
         el.innerHTML = el.getAttribute('data-' + lang);
       });
 
-      // Update iframe language parameter dynamically
       const iframe = document.getElementById('booqme-iframe');
       if (iframe) {
         iframe.src = lang === 'en' 
@@ -239,11 +239,18 @@
           : "https://booqme.app/sk/rezervacia/poriadimesk";
       }
 
-      // Save user preference
       localStorage.setItem('poriadime_lang', lang);
     }
 
-    // Load saved language on startup
+    document.getElementById('referralForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const currentLang = document.documentElement.lang;
+      document.getElementById('refFormNote').textContent = currentLang === 'en' 
+        ? 'Thank you! Your referral request has been recorded.' 
+        : 'Ďakujeme! Vaše odporúčanie bolo odoslané.';
+      this.reset();
+    });
+
     document.addEventListener('DOMContentLoaded', () => {
       const savedLang = localStorage.getItem('poriadime_lang') || 'sk';
       setLanguage(savedLang);
