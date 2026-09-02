@@ -1,175 +1,177 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PORIADIME — Profesionálne upratovanie</title>
-  <meta name="description" content="PORIADIME. Profesionálne upratovanie domácností, firiem, bytových domov a apartmánov v Bratislave a okolí. Pravidelne alebo jednorazovo.">
-  <meta name="theme-color" content="#12352f">
-  <link rel="canonical" href="https://poriadime.sk/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-sk="Poriadime.sk | Upratovacie a čistiace služby" data-en="Poriadime.sk | Cleaning & Maintenance Services">Poriadime.sk</title>
+  
   <style>
-    :root{
-      --ink:#12352f; --ink2:#1d4a42; --cream:#f7f4ed; --white:#fff;
-      --line:#dfe4df; --muted:#66736e; --accent:#d9a441; --soft:#eaf0ec;
-      --shadow:0 18px 50px rgba(18,53,47,.10); --radius:22px;
+    :root {
+      --primary: #0066cc;
+      --primary-hover: #0052a3;
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
     }
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);line-height:1.55}
-    a{color:inherit;text-decoration:none}.container{width:min(1160px,92%);margin:auto}
-    .topbar{background:var(--ink);color:#fff;font-size:13px}.topbar .container{display:flex;justify-content:space-between;padding:9px 0;gap:20px}
-    header{position:sticky;top:0;z-index:20;background:rgba(247,244,237,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(18,53,47,.08)}
-    nav{height:76px;display:flex;align-items:center;justify-content:space-between}
-    .logo{font-weight:900;letter-spacing:.14em;font-size:23px}.logo span{color:var(--accent)}
-    .navlinks{display:flex;gap:28px;font-weight:650;font-size:14px}.navlinks a:hover{opacity:.65}
-    .navcta{background:var(--ink);color:#fff;padding:13px 19px;border-radius:999px;font-weight:800}
-    .hero{padding:88px 0 74px;background:radial-gradient(circle at 80% 20%,#e7eee9 0,transparent 38%),var(--cream)}
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
-    .eyebrow{font-size:13px;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-    h1{font-size:clamp(56px,9vw,112px);line-height:.88;margin:18px 0 18px;letter-spacing:-.065em}
-    .hero h1 em{font-style:normal;color:var(--ink2)} .lead{font-size:clamp(19px,2.2vw,26px);max-width:650px;color:#3f4d48}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:15px 24px;font-weight:850;border:1px solid var(--ink);transition:.2s}
-    .btn.primary{background:var(--ink);color:#fff}.btn.secondary{background:transparent}.btn:hover{transform:translateY(-2px)}
-    .hero-card{background:var(--ink);color:#fff;border-radius:30px;padding:38px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-    .hero-card:after{content:"";position:absolute;width:190px;height:190px;border:1px solid rgba(255,255,255,.18);border-radius:50%;right:-70px;top:-70px}
-    .hero-card h2{font-size:38px;line-height:1.05;margin:0 0 14px}.hero-card p{color:#d8e2de}
-    .check{display:flex;gap:11px;margin:16px 0}.check b{color:var(--accent)}
-    section{padding:88px 0}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
-    h2{font-size:clamp(34px,5vw,56px);line-height:1;margin:0;letter-spacing:-.04em}.section-head p{max-width:480px;color:var(--muted)}
-    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.service{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:27px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between}
-    .service .num{font-size:12px;font-weight:900;color:var(--accent)}.service h3{font-size:23px;margin:35px 0 8px}.service p{color:var(--muted);font-size:15px}
-    .promo{background:var(--ink);color:#fff}.promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.promo-card{border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);padding:34px}.promo-card h3{font-size:28px;margin:0 0 10px}.promo-card p{color:#d8e2de}.tag{display:inline-block;background:var(--accent);color:#1c1c16;font-weight:900;border-radius:999px;padding:7px 11px;font-size:12px}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.step{background:var(--soft);border-radius:var(--radius);padding:30px}.step strong{font-size:42px}.step h3{font-size:22px}
-    .referral{background:#e8eee9}.ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.bigline{font-size:clamp(30px,5vw,58px);font-weight:900;line-height:1.02;letter-spacing:-.04em}
-    .faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px 22px}.faq summary{font-weight:800;cursor:pointer}.faq p{color:var(--muted);margin-bottom:0}
-    .contact{background:#fff}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px}.contact-box{background:var(--ink);color:#fff;border-radius:28px;padding:34px}.contact-box p{color:#d8e2de}.contact-box a{font-weight:800}
-    form{display:grid;gap:13px}.two{display:grid;grid-template-columns:1fr 1fr;gap:13px}label{font-size:13px;font-weight:800}input,select,textarea{width:100%;margin-top:6px;border:1px solid var(--line);border-radius:13px;padding:14px 15px;font:inherit;background:var(--cream);color:var(--ink)}textarea{min-height:120px;resize:vertical}
-    footer{background:#0d2925;color:#d8e2de;padding:35px 0}.footer-grid{display:flex;justify-content:space-between;gap:20px}.small{font-size:13px;color:#9fb0aa}
-    @media(max-width:900px){.hero-grid,.ref-grid,.contact-grid{grid-template-columns:1fr}.services{grid-template-columns:1fr 1fr}.promo-grid,.faq{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.navlinks{display:none}.hero{padding-top:60px}}
-    @media(max-width:560px){.topbar .container{justify-content:center}.topbar .container span:first-child{display:none}.services{grid-template-columns:1fr}.two{grid-template-columns:1fr}.hero-card{padding:27px}.section-head{display:block}.section-head p{margin-top:18px}}
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .lang-switch {
+      display: flex;
+      gap: 0.5rem;
+      background: #f1f5f9;
+      padding: 4px;
+      border-radius: 8px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: #64748b;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--card-bg);
+      color: var(--primary);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+      color: #0f172a;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: #64748b;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .booking-section {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      padding: 1.5rem;
+    }
+
+    .booking-section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    iframe {
+      width: 100%;
+      min-height: 650px;
+      border: 0;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
-  <div class="topbar"><div class="container"><span>Bratislava a okolie</span><span>Pravidelne • Jednorazovo • Airbnb / Booking</span></div></div>
+
   <header>
-    <nav class="container">
-      <a class="logo" href="#">PORIADIME<span>.</span></a>
-      <div class="navlinks">
-        <a href="#sluzby">Služby</a><a href="#ako-to-funguje">Ako to funguje</a><a href="#ponuka">Ponuka</a><a href="#kontakt">Kontakt</a>
-      </div>
-      <a class="navcta" href="#kontakt">Objednať</a>
-    </nav>
+    <a href="#" class="logo">poriadime.sk</a>
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="setLanguage('sk')" id="btn-sk">SK</button>
+      <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+    </div>
   </header>
 
-  <main>
+  <main class="container">
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Profesionálne upratovanie</div>
-          <h1>PORIADIME.<br><em>Vy nemusíte.</em></h1>
-          <p class="lead">Domácnosti, firmy, bytové domy aj apartmány. Prídeme s vlastným vybavením a postaráme sa o poriadok podľa dohody.</p>
-          <div class="actions"><a class="btn primary" href="#kontakt">Objednať upratovanie</a><a class="btn secondary" href="#sluzby">Pozrieť služby</a></div>
-        </div>
-        <div class="hero-card">
-          <span class="tag">NOVÝ ZÁKAZNÍK</span>
-          <h2>Prvé upratovanie zdarma.</h2>
-          <p>Pri mesačnom programe. Nechcete sa viazať? Prvé jednorazové upratovanie so zľavou 50 %.</p>
-          <div class="check"><b>✓</b><span>Vlastné čistiace prostriedky a vybavenie</span></div>
-          <div class="check"><b>✓</b><span>Dohodnutý rozsah a termín</span></div>
-          <div class="check"><b>✓</b><span>Pravidelná alebo jednorazová služba</span></div>
-        </div>
-      </div>
+      <h1 data-sk="Profesionálne upratovacie služby" data-en="Professional Cleaning Services">
+        Profesionálne upratovacie služby
+      </h1>
+      <p data-sk="Rezervujte si svoje upratovanie rýchlo a jednoducho prostredníctvom nášho online systému."
+         data-en="Book your cleaning service quickly and easily using our online reservation system.">
+        Rezervujte si svoje upratovanie rýchlo a jednoducho prostredníctvom nášho online systému.
+      </p>
     </section>
 
-    <section id="sluzby">
-      <div class="container">
-        <div class="section-head"><h2>Čo poriadime?</h2><p>Jedna firma pre domácnosť aj firmu. Nastavíme službu podľa priestoru, frekvencie a toho, čo od nás potrebujete.</p></div>
-        <div class="services">
-          <article class="service"><span class="num">01 / DOMÁCNOSŤ</span><div><h3>Byty a domy</h3><p>Pravidelné alebo jednorazové upratovanie kuchyne, kúpeľní, prachu, podláh a ďalších dohodnutých úkonov.</p></div></article>
-          <article class="service"><span class="num">02 / FIRMA</span><div><h3>Kancelárie</h3><p>Pravidelná starostlivosť o kancelárie, prevádzky a firemné priestory. Ponuka na mieru podľa rozsahu.</p></div></article>
-          <article class="service"><span class="num">03 / BYTOVÝ DOM</span><div><h3>Spoločné priestory</h3><p>Chodby, schodiská, vstupy a ďalšie spoločné priestory s pravidelným harmonogramom.</p></div></article>
-          <article class="service"><span class="num">04 / AIRBNB</span><div><h3>Apartmány</h3><p>Turnover medzi hosťami: upratovanie, príprava apartmánu a ďalšie dohodnuté úkony.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="promo" id="ponuka">
-      <div class="container">
-        <div class="section-head"><h2>Jednoduchá ponuka.</h2><p style="color:#b9cbc5">Chceme, aby zákazník presne vedel, čo dostane. Bez zbytočných komplikácií.</p></div>
-        <div class="promo-grid">
-          <div class="promo-card"><span class="tag">MESAČNÝ PROGRAM</span><h3>Prvé upratovanie zdarma</h3><p>Vyberiete si pravidelný harmonogram. Po úhrade prvého mesiaca začíname.</p></div>
-          <div class="promo-card"><span class="tag">JEDNORAZOVO</span><h3>Prvé upratovanie −50 %</h3><p>Ak nechcete mesačný program, môžete nás najprv vyskúšať jednorazovo za polovicu ceny.</p></div>
-          <div class="promo-card"><span class="tag">GARANCIA</span><h3>Nie ste spokojní?</h3><p>Najprv napravíme nedostatky. Ak problém nevyriešime podľa dohodnutého rozsahu, vrátime cenu prvého mesiaca podľa podmienok služby.</p></div>
-          <div class="promo-card"><span class="tag">ODPORUČENIE</span><h3>Odporučte nás a upratujeme vám zdarma.</h3><p>Ak vďaka vám nový zákazník aktivuje mesačný program a splní podmienky odporúčacieho programu, získate ďalší mesiac zdarma.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="ako-to-funguje">
-      <div class="container">
-        <div class="section-head"><h2>Takto to funguje.</h2><p>Žiadne komplikované balíčky. Dohodneme priestor, rozsah, frekvenciu a termín.</p></div>
-        <div class="steps">
-          <div class="step"><strong>01</strong><h3>Napíšete nám</h3><p>Pošlete typ priestoru, približnú veľkosť, lokalitu a čo potrebujete upratať.</p></div>
-          <div class="step"><strong>02</strong><h3>Dohodneme cenu</h3><p>Pri domácnosti nastavíme službu podľa rozsahu. Firmy, budovy a apartmány riešime na mieru.</p></div>
-          <div class="step"><strong>03</strong><h3>Prídeme a poriadime</h3><p>Prinesieme vlastné vybavenie a čistiace prostriedky. Vy sa môžete venovať svojim veciam.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="referral">
-      <div class="container ref-grid">
-        <div><div class="eyebrow">Odporúčací program</div><div class="bigline">Poznáte niekoho, kto potrebuje upratovanie?</div></div>
-        <div><p>Pošlite mu kontakt na PORIADIME. Keď nový zákazník aktivuje mesačný program a splní podmienky programu, váš ďalší mesiac upratovania máte zdarma.</p><a class="btn primary" href="#kontakt">Chcem odporučiť PORIADIME</a></div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-head"><h2>Časté otázky</h2><p>Ak tu nenájdete odpoveď, napíšte nám. Dohodneme konkrétne riešenie.</p></div>
-        <div class="faq">
-          <details><summary>Prinášate vlastné vybavenie?</summary><p>Áno. Čistiace prostriedky, náradie a základné vybavenie prinášame my.</p></details>
-          <details><summary>Musím mať mesačný program?</summary><p>Nie. Ponúkame pravidelné aj jednorazové upratovanie.</p></details>
-          <details><summary>Upratujete Airbnb a Booking apartmány?</summary><p>Áno. Ponúkame upratovanie medzi hosťami a ďalšie dohodnuté úkony.</p></details>
-          <details><summary>Upratujete aj kancelárie a bytové domy?</summary><p>Áno. Pri firemných priestoroch a spoločných priestoroch pripravíme ponuku podľa rozsahu a frekvencie.</p></details>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="kontakt">
-      <div class="container contact-grid">
-        <div class="contact-box">
-          <div class="eyebrow">Objednávka / dopyt</div>
-          <h2 style="color:#fff;margin-top:15px">Poriadime to.</h2>
-          <p>Napíšte nám základné informácie. Ozveme sa a dohodneme ďalší postup.</p>
-          <p><strong>Bratislava a okolie</strong></p>
-          <p class="small">Telefón a e-mail doplňte pred spustením webu.</p>
-        </div>
-        <div>
-          <form id="contactForm">
-            <div class="two">
-              <label>Meno<input name="name" required placeholder="Vaše meno"></label>
-              <label>Telefón<input name="phone" required placeholder="+421 ..."></label>
-            </div>
-            <div class="two">
-              <label>E-mail<input type="email" name="email" placeholder="vas@email.sk"></label>
-              <label>Typ služby<select name="service"><option>Domácnosť</option><option>Kancelária / firma</option><option>Bytový dom</option><option>Airbnb / Booking</option><option>Jednorazové / hĺbkové</option></select></label>
-            </div>
-            <label>Správa<textarea name="message" placeholder="Adresa/lokalita, približná plocha, frekvencia a čo potrebujete..."></textarea></label>
-            <button class="btn primary" type="submit">Odoslať dopyt</button>
-            <div id="formNote" class="small"></div>
-          </form>
-        </div>
-      </div>
+    <section class="booking-section">
+      <h2 data-sk="Online Rezervácia" data-en="Online Booking">Online Rezervácia</h2>
+      <!-- Booqme Reservation Widget -->
+      <iframe src="https://booqme.app/sk/rezervacia/poriadimesk" allow="payment"></iframe>
     </section>
   </main>
 
-  <footer><div class="container footer-grid"><div><strong>PORIADIME.</strong><div class="small">Vy nemusíte.</div></div><div class="small">© 2026 PORIADIME s. r. o. • Bratislava a okolie</div></div></footer>
-
   <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      document.getElementById('formNote').textContent = 'Dopyt je pripravený. Pred spustením webu treba pripojiť formulár k e-mailu alebo rezervačnému systému.';
+    function setLanguage(lang) {
+      // Update toggle buttons active state
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn-' + lang).classList.add('active');
+
+      // Update HTML lang attribute
+      document.documentElement.lang = lang;
+
+      // Update text nodes with matching data attributes
+      document.querySelectorAll('[data-sk][data-en]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+
+      // Persist user selection
+      localStorage.setItem('preferred_lang', lang);
+    }
+
+    // Auto-detect saved language on initial load
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('preferred_lang') || 'sk';
+      setLanguage(savedLang);
     });
   </script>
+
 </body>
 </html>
