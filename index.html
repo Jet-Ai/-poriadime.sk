@@ -1,177 +1,253 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-sk="Poriadime.sk | Upratovacie a čistiace služby" data-en="Poriadime.sk | Cleaning & Maintenance Services">Poriadime.sk</title>
-  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-sk="PORIADIME — Profesionálne upratovanie" data-en="PORIADIME — Professional Cleaning">PORIADIME — Profesionálne upratovanie</title>
+  <meta name="description" content="PORIADIME. Profesionálne upratovanie domácností, firiem, bytových domov a apartmánov v Bratislave a okolí. Pravidelne alebo jednorazovo.">
+  <meta name="theme-color" content="#12352f">
+  <link rel="canonical" href="https://poriadime.sk/">
   <style>
-    :root {
-      --primary: #0066cc;
-      --primary-hover: #0052a3;
-      --bg: #f8fafc;
-      --text: #1e293b;
-      --card-bg: #ffffff;
-      --border: #e2e8f0;
+    :root{
+      --ink:#12352f; --ink2:#1d4a42; --cream:#f7f4ed; --white:#fff;
+      --line:#dfe4df; --muted:#66736e; --accent:#d9a441; --soft:#eaf0ec;
+      --shadow:0 18px 50px rgba(18,53,47,.10); --radius:22px;
     }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);line-height:1.55}
+    a{color:inherit;text-decoration:none}.container{width:min(1160px,92%);margin:auto}
+    .topbar{background:var(--ink);color:#fff;font-size:13px}.topbar .container{display:flex;justify-content:space-between;padding:9px 0;gap:20px}
+    header{position:sticky;top:0;z-index:20;background:rgba(247,244,237,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(18,53,47,.08)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-weight:900;letter-spacing:.14em;font-size:23px}.logo span{color:var(--accent)}
+    .nav-right{display:flex;align-items:center;gap:20px}
+    .navlinks{display:flex;gap:28px;font-weight:650;font-size:14px}.navlinks a:hover{opacity:.65}
+    .navcta{background:var(--ink);color:#fff;padding:13px 19px;border-radius:999px;font-weight:800}
+    
+    /* Language Toggle Switcher */
+    .lang-switch{display:flex;gap:4px;background:rgba(18,53,47,.08);padding:3px;border-radius:999px}
+    .lang-btn{border:none;background:transparent;padding:5px 12px;border-radius:999px;font-weight:800;font-size:12px;cursor:pointer;color:var(--ink);transition:.2s}
+    .lang-btn.active{background:var(--ink);color:#fff}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    header {
-      background: var(--card-bg);
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    .lang-switch {
-      display: flex;
-      gap: 0.5rem;
-      background: #f1f5f9;
-      padding: 4px;
-      border-radius: 8px;
-    }
-
-    .lang-btn {
-      border: none;
-      background: transparent;
-      padding: 6px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.875rem;
-      color: #64748b;
-      transition: all 0.2s ease;
-    }
-
-    .lang-btn.active {
-      background: var(--card-bg);
-      color: var(--primary);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    .hero {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.75rem;
-      color: #0f172a;
-    }
-
-    .hero p {
-      font-size: 1.125rem;
-      color: #64748b;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .booking-section {
-      background: var(--card-bg);
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-      overflow: hidden;
-      padding: 1.5rem;
-    }
-
-    .booking-section h2 {
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-      text-align: center;
-    }
-
-    iframe {
+    .hero{padding:88px 0 74px;background:radial-gradient(circle at 80% 20%,#e7eee9 0,transparent 38%),var(--cream)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+    .eyebrow{font-size:13px;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+    h1{font-size:clamp(56px,9vw,112px);line-height:.88;margin:18px 0 18px;letter-spacing:-.065em}
+    .hero h1 em{font-style:normal;color:var(--ink2)} .lead{font-size:clamp(19px,2.2vw,26px);max-width:650px;color:#3f4d48}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:15px 24px;font-weight:850;border:1px solid var(--ink);transition:.2s}
+    .btn.primary{background:var(--ink);color:#fff}.btn.secondary{background:transparent}.btn:hover{transform:translateY(-2px)}
+    .hero-card{background:var(--ink);color:#fff;border-radius:30px;padding:38px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .hero-card:after{content:"";position:absolute;width:190px;height:190px;border:1px solid rgba(255,255,255,.18);border-radius:50%;right:-70px;top:-70px}
+    .hero-card h2{font-size:38px;line-height:1.05;margin:0 0 14px}.hero-card p{color:#d8e2de}
+    .check{display:flex;gap:11px;margin:16px 0}.check b{color:var(--accent)}
+    section{padding:88px 0}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
+    h2{font-size:clamp(34px,5vw,56px);line-height:1;margin:0;letter-spacing:-.04em}.section-head p{max-width:480px;color:var(--muted)}
+    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.service{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:27px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between}
+    .service .num{font-size:12px;font-weight:900;color:var(--accent)}.service h3{font-size:23px;margin:35px 0 8px}.service p{color:var(--muted);font-size:15px}
+    .promo{background:var(--ink);color:#fff}.promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.promo-card{border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);padding:34px}.promo-card h3{font-size:28px;margin:0 0 10px}.promo-card p{color:#d8e2de}.tag{display:inline-block;background:var(--accent);color:#1c1c16;font-weight:900;border-radius:999px;padding:7px 11px;font-size:12px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.step{background:var(--soft);border-radius:var(--radius);padding:30px}.step strong{font-size:42px}.step h3{font-size:22px}
+    .referral{background:#e8eee9}.ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.bigline{font-size:clamp(30px,5vw,58px);font-weight:900;line-height:1.02;letter-spacing:-.04em}
+    .faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px 22px}.faq summary{font-weight:800;cursor:pointer}.faq p{color:var(--muted);margin-bottom:0}
+    .contact{background:#fff}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px}.contact-box{background:var(--ink);color:#fff;border-radius:28px;padding:34px}.contact-box p{color:#d8e2de}.contact-box a{font-weight:800}
+    
+    /* Booqme Frame Styling */
+    .booqme-frame-container {
       width: 100%;
-      min-height: 650px;
-      border: 0;
-      border-radius: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
     }
+    .booqme-frame-container iframe {
+      width: 100%;
+      min-height: 680px;
+      border: 0;
+      display: block;
+    }
+
+    footer{background:#0d2925;color:#d8e2de;padding:35px 0}.footer-grid{display:flex;justify-content:space-between;gap:20px}.small{font-size:13px;color:#9fb0aa}
+    @media(max-width:900px){.hero-grid,.ref-grid,.contact-grid{grid-template-columns:1fr}.services{grid-template-columns:1fr 1fr}.promo-grid,.faq{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.navlinks{display:none}.hero{padding-top:60px}}
+    @media(max-width:560px){.topbar .container{justify-content:center}.topbar .container span:first-child{display:none}.services{grid-template-columns:1fr}.hero-card{padding:27px}.section-head{display:block}.section-head p{margin-top:18px}}
   </style>
 </head>
 <body>
-
-  <header>
-    <a href="#" class="logo">poriadime.sk</a>
-    <div class="lang-switch">
-      <button class="lang-btn active" onclick="setLanguage('sk')" id="btn-sk">SK</button>
-      <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+  <div class="topbar">
+    <div class="container">
+      <span data-sk="Bratislava a okolie" data-en="Bratislava & surroundings">Bratislava a okolie</span>
+      <span data-sk="Pravidelne • Jednorazovo • Airbnb / Booking" data-en="Recurring • One-time • Airbnb / Booking">Pravidelne • Jednorazovo • Airbnb / Booking</span>
     </div>
+  </div>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#">PORIADIME<span>.</span></a>
+      <div class="navlinks">
+        <a href="#sluzby" data-sk="Služby" data-en="Services">Služby</a>
+        <a href="#ako-to-funguje" data-sk="Ako to funguje" data-en="How it works">Ako to funguje</a>
+        <a href="#ponuka" data-sk="Ponuka" data-en="Offers">Ponuka</a>
+        <a href="#rezervacia" data-sk="Rezervácia" data-en="Booking">Rezervácia</a>
+      </div>
+      <div class="nav-right">
+        <div class="lang-switch">
+          <button class="lang-btn active" onclick="setLanguage('sk')" id="btn-sk">SK</button>
+          <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+        </div>
+        <a class="navcta" href="#rezervacia" data-sk="Objednať" data-en="Book Now">Objednať</a>
+      </div>
+    </nav>
   </header>
 
-  <main class="container">
+  <main>
     <section class="hero">
-      <h1 data-sk="Profesionálne upratovacie služby" data-en="Professional Cleaning Services">
-        Profesionálne upratovacie služby
-      </h1>
-      <p data-sk="Rezervujte si svoje upratovanie rýchlo a jednoducho prostredníctvom nášho online systému."
-         data-en="Book your cleaning service quickly and easily using our online reservation system.">
-        Rezervujte si svoje upratovanie rýchlo a jednoducho prostredníctvom nášho online systému.
-      </p>
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow" data-sk="Profesionálne upratovanie" data-en="Professional Cleaning">Profesionálne upratovanie</div>
+          <h1 data-sk="PORIADIME.<br><em>Vy nemusíte.</em>" data-en="PORIADIME.<br><em>You don't have to.</em>">PORIADIME.<br><em>Vy nemusíte.</em></h1>
+          <p class="lead" data-sk="Domácnosti, firmy, bytové domy aj apartmány. Prídeme s vlastným vybavením a postaráme sa o poriadok podľa dohody." data-en="Homes, offices, residential buildings, and apartments. We bring our own equipment and take care of everything as agreed.">Domácnosti, firmy, bytové domy aj apartmány. Prídeme s vlastným vybavením a postaráme sa o poriadok podľa dohody.</p>
+          <div class="actions">
+            <a class="btn primary" href="#rezervacia" data-sk="Objednať upratovanie" data-en="Book Cleaning">Objednať upratovanie</a>
+            <a class="btn secondary" href="#sluzby" data-sk="Pozrieť služby" data-en="View Services">Pozrieť služby</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <span class="tag" data-sk="NOVÝ ZÁKAZNÍK" data-en="NEW CUSTOMER">NOVÝ ZÁKAZNÍK</span>
+          <h2 data-sk="Prvé upratovanie zdarma." data-en="First cleaning free.">Prvé upratovanie zdarma.</h2>
+          <p data-sk="Pri mesačnom programe. Nechcete sa viazať? Prvé jednorazové upratovanie so zľavou 50 %." data-en="With monthly plan. Don't want to commit? Get 50% off your first one-time cleaning.">Pri mesačnom programe. Nechcete sa viazať? Prvé jednorazové upratovanie so zľavou 50 %.</p>
+          <div class="check"><b>✓</b><span data-sk="Vlastné čistiace prostriedky a vybavenie" data-en="Our own cleaning products & equipment">Vlastné čistiace prostriedky a vybavenie</span></div>
+          <div class="check"><b>✓</b><span data-sk="Dohodnutý rozsah a termín" data-en="Agreed scope & schedule">Dohodnutý rozsah a termín</span></div>
+          <div class="check"><b>✓</b><span data-sk="Pravidelná alebo jednorazová služba" data-en="Regular or one-off service">Pravidelná alebo jednorazová služba</span></div>
+        </div>
+      </div>
     </section>
 
-    <section class="booking-section">
-      <h2 data-sk="Online Rezervácia" data-en="Online Booking">Online Rezervácia</h2>
-      <!-- Booqme Reservation Widget -->
-      <iframe src="https://booqme.app/sk/rezervacia/poriadimesk" allow="payment"></iframe>
+    <section id="sluzby">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-sk="Čo poriadime?" data-en="What do we clean?">Čo poriadime?</h2>
+          <p data-sk="Jedna firma pre domácnosť aj firmu. Nastavíme službu podľa priestoru, frekvencie a toho, čo od nás potrebujete." data-en="One company for homes and businesses. We tailor the service based on space, frequency, and your needs.">Jedna firma pre domácnosť aj firmu. Nastavíme službu podľa priestoru, frekvencie a toho, čo od nás potrebujete.</p>
+        </div>
+        <div class="services">
+          <article class="service"><span class="num">01 / <span data-sk="DOMÁCNOSŤ" data-en="RESIDENTIAL">DOMÁCNOSŤ</span></span><div><h3 data-sk="Byty a domy" data-en="Apartments & Houses">Byty a domy</h3><p data-sk="Pravidelné alebo jednorazové upratovanie kuchyne, kúpeľní, prachu, podláh a ďalších dohodnutých úkonov." data-en="Regular or one-time cleaning of kitchens, bathrooms, dusting, floors, and more.">Pravidelné alebo jednorazové upratovanie kuchyne, kúpeľní, prachu, podláh a ďalších dohodnutých úkonov.</p></div></article>
+          <article class="service"><span class="num">02 / <span data-sk="FIRMA" data-en="COMMERCIAL">FIRMA</span></span><div><h3 data-sk="Kancelárie" data-en="Offices">Kancelárie</h3><p data-sk="Pravidelná starostlivosť o kancelárie, prevádzky a firemné priestory. Ponuka na mieru podľa rozsahu." data-en="Regular maintenance of offices, workplaces, and commercial spaces tailored to scope.">Pravidelná starostlivosť o kancelárie, prevádzky a firemné priestory. Ponuka na mieru podľa rozsahu.</p></div></article>
+          <article class="service"><span class="num">03 / <span data-sk="BYTOVÝ DOM" data-en="BUILDINGS">BYTOVÝ DOM</span></span><div><h3 data-sk="Spoločné priestory" data-en="Common Areas">Spoločné priestory</h3><p data-sk="Chodby, schodiská, vstupy a ďalšie spoločné priestory s pravidelným harmonogramom." data-en="Hallways, stairwells, entrances, and common areas cleaned on a set schedule.">Chodby, schodiská, vstupy a ďalšie spoločné priestory s pravidelným harmonogramom.</p></div></article>
+          <article class="service"><span class="num">04 / AIRBNB</span><div><h3 data-sk="Apartmány" data-en="Apartments">Apartmány</h3><p data-sk="Turnover medzi hosťami: upratovanie, príprava apartmánu a ďalšie dohodnuté úkony." data-en="Guest turnover: cleaning, apartment setup, and tailored maintenance tasks.">Turnover medzi hosťami: upratovanie, príprava apartmánu a ďalšie dohodnuté úkony.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="promo" id="ponuka">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-sk="Jednoduchá ponuka." data-en="Simple offer.">Jednoduchá ponuka.</h2>
+          <p style="color:#b9cbc5" data-sk="Chceme, aby zákazník presne vedel, čo dostane. Bez zbytočných komplikácií." data-en="We want our customers to know exactly what they get. No unnecessary friction.">Chceme, aby zákazník presne vedel, čo dostane. Bez zbytočných komplikácií.</p>
+        </div>
+        <div class="promo-grid">
+          <div class="promo-card"><span class="tag" data-sk="MESAČNÝ PROGRAM" data-en="MONTHLY PLAN">MESAČNÝ PROGRAM</span><h3 data-sk="Prvé upratovanie zdarma" data-en="First cleaning free">Prvé upratovanie zdarma</h3><p data-sk="Vyberiete si pravidelný harmonogram. Po úhrade prvého mesiaca začíname." data-en="Choose a regular schedule. We get to work right after month one confirmation.">Vyberiete si pravidelný harmonogram. Po úhrade prvého mesiaca začíname.</p></div>
+          <div class="promo-card"><span class="tag" data-sk="JEDNORAZOVO" data-en="ONE-TIME">JEDNORAZOVO</span><h3 data-sk="Prvé upratovanie −50 %" data-en="First cleaning -50%">Prvé upratovanie −50 %</h3><p data-sk="Ak nechcete mesačný program, môžete nás najprv vyskúšať jednorazovo za polovicu ceny." data-en="If you don't want a monthly plan, try us once for half price.">Ak nechcete mesačný program, môžete nás najprv vyskúšať jednorazovo za polovicu ceny.</p></div>
+          <div class="promo-card"><span class="tag" data-sk="GARANCIA" data-en="GUARANTEE">GARANCIA</span><h3 data-sk="Nie ste spokojní?" data-en="Not satisfied?">Nie ste spokojní?</h3><p data-sk="Najprv napravíme nedostatky. Ak problém nevyriešime podľa dohodnutého rozsahu, vrátime cenu prvého mesiaca podľa podmienok služby." data-en="We'll rectify any issues immediately. If we fail to satisfy the agreed scope, we offer a service refund.">Najprv napravíme nedostatky. Ak problém nevyriešime podľa dohodnutého rozsahu, vrátime cenu prvého mesiaca podľa podmienok služby.</p></div>
+          <div class="promo-card"><span class="tag" data-sk="ODPORUČENIE" data-en="REFERRAL">ODPORUČENIE</span><h3 data-sk="Odporučte nás a upratujeme vám zdarma." data-en="Refer us and get free cleaning.">Odporučte nás a upratujeme vám zdarma.</h3><p data-sk="Ak vďaka vám nový zákazník aktivuje mesačný program a splní podmienky odporúčacieho programu, získate ďalší mesiac zdarma." data-en="When a referred friend signs up for a monthly plan, you get an extra month free.">Ak vďaka vám nový zákazník aktivuje mesačný program a splní podmienky odporúčacieho programu, získate ďalší mesiac zdarma.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ako-to-funguje">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-sk="Takto to funguje." data-en="How it works.">Takto to funguje.</h2>
+          <p data-sk="Žiadne komplikované balíčky. Dohodneme priestor, rozsah, frekvenciu a termín." data-en="No complex packages. Simply select space, scope, frequency, and date.">Žiadne komplikované balíčky. Dohodneme priestor, rozsah, frekvenciu a termín.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><strong>01</strong><h3 data-sk="Vyberiete termín" data-en="Choose time">Vyberiete termín</h3><p data-sk="Zvoľte si požadovanú službu a dostupný dátum v rezervačnom kalendári." data-en="Select your desired service and available date in the booking calendar.">Zvoľte si požadovanú službu a dostupný dátum v rezervačnom kalendári.</p></div>
+          <div class="step"><strong>02</strong><h3 data-sk="Potvrdíte rezerváciu" data-en="Confirm booking">Potvrdíte rezerváciu</h3><p data-sk="Vyberte pracovníka alebo nechajte výber na nás a odošlite rezerváciu." data-en="Pick a professional or let us auto-assign one for you.">Vyberte pracovníka alebo nechajte výber na nás a odošlite rezerváciu.</p></div>
+          <div class="step"><strong>03</strong><h3 data-sk="Prídeme a poriadime" data-en="We clean up">Prídeme a poriadime</h3><p data-sk="Prinesieme vlastné vybavenie a čistiace prostriedky. Vy sa môžete venovať svojim veciam." data-en="We bring our own supplies and equipment so you can relax.">Prinesieme vlastné vybavenie a čistiace prostriedky. Vy sa môžete venovať svojim veciam.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booqme Reservation Integration Section -->
+    <section id="rezervacia">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-sk="Online Rezervácia" data-en="Online Booking">Online Rezervácia</h2>
+          <p data-sk="Vyberte si požadovanú službu, termín a zarezervujte si upratovanie priamo online." data-en="Select your service, choose a date, and book your cleaning directly online.">Vyberte si požadovanú službu, termín a zarezervujte si upratovanie priamo online.</p>
+        </div>
+        <div class="booqme-frame-container">
+          <iframe id="booqme-iframe" style="min-width:100%;min-height:600px;border:0;" src="https://booqme.app/sk/rezervacia/poriadimesk" allow="payment"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="referral">
+      <div class="container ref-grid">
+        <div>
+          <div class="eyebrow" data-sk="Odporúčací program" data-en="Referral Program">Odporúčací program</div>
+          <div class="bigline" data-sk="Poznáte niekoho, kto potrebuje upratovanie?" data-en="Know anyone needing a cleaning service?">Poznáte niekoho, kto potrebuje upratovanie?</div>
+        </div>
+        <div>
+          <p data-sk="Pošlite mu kontakt na PORIADIME. Keď nový zákazník aktivuje mesačný program a splní podmienky programu, váš ďalší mesiac upratovania máte zdarma." data-en="Share PORIADIME with them. Once they activate a monthly plan, you get your next month of cleaning free.">Pošlite mu kontakt na PORIADIME. Keď nový zákazník aktivuje mesačný program a splní podmienky programu, váš ďalší mesiac upratovania máte zdarma.</p>
+          <a class="btn primary" href="#rezervacia" data-sk="Chcem odporučiť PORIADIME" data-en="Recommend PORIADIME">Chcem odporučiť PORIADIME</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2 data-sk="Časté otázky" data-en="Frequently Asked Questions">Časté otázky</h2>
+          <p data-sk="Ak tu nenájdete odpoveď, napíšte nám. Dohodneme konkrétne riešenie." data-en="If you don't find your answer here, contact us directly.">Ak tu nenájdete odpoveď, napíšte nám. Dohodneme konkrétne riešenie.</p>
+        </div>
+        <div class="faq">
+          <details><summary data-sk="Prinášate vlastné vybavenie?" data-en="Do you bring your own equipment?">Prinášate vlastné vybavenie?</summary><p data-sk="Áno. Čistiace prostriedky, náradie a základné vybavenie prinášame my." data-en="Yes. We supply all required detergents, tools, and equipment.">Áno. Čistiace prostriedky, náradie a základné vybavenie prinášame my.</p></details>
+          <details><summary data-sk="Musím mať mesačný program?" data-en="Do I need a monthly subscription?">Musím mať mesačný program?</summary><p data-sk="Nie. Ponúkame pravidelné aj jednorazové upratovanie." data-en="No. We offer both one-time and recurring cleaning services.">Nie. Ponúkame pravidelné aj jednorazové upratovanie.</p></details>
+          <details><summary data-sk="Upratujete Airbnb a Booking apartmány?" data-en="Do you service Airbnb & Booking properties?">Upratujete Airbnb a Booking apartmány?</summary><p data-sk="Áno. Ponúkame upratovanie medzi hosťami a ďalšie dohodnuté úkony." data-en="Yes. We manage turnover cleaning and guest preparations.">Áno. Ponúkame upratovanie medzi hosťami a ďalšie dohodnuté úkony.</p></details>
+          <details><summary data-sk="Upratujete aj kancelárie a bytové domy?" data-en="Do you clean offices and residential buildings?">Upratujete aj kancelárie a bytové domy?</summary><p data-sk="Áno. Pri firemných priestoroch a spoločných priestoroch pripravíme ponuku podľa rozsahu a frekvencie." data-en="Yes. We prepare tailored proposals for commercial and residential shared spaces.">Áno. Pri firemných priestoroch a spoločných priestoroch pripravíme ponuku podľa rozsahu a frekvencie.</p></details>
+        </div>
+      </div>
     </section>
   </main>
 
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>PORIADIME.</strong>
+        <div class="small" data-sk="Vy nemusíte." data-en="You don't have to.">Vy nemusíte.</div>
+      </div>
+      <div class="small">© 2026 PORIADIME s. r. o. • <span data-sk="Bratislava a okolie" data-en="Bratislava & surroundings">Bratislava a okolie</span></div>
+    </div>
+  </footer>
+
   <script>
     function setLanguage(lang) {
-      // Update toggle buttons active state
+      // Toggle button states
       document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
       document.getElementById('btn-' + lang).classList.add('active');
 
       // Update HTML lang attribute
       document.documentElement.lang = lang;
 
-      // Update text nodes with matching data attributes
+      // Update translated elements
       document.querySelectorAll('[data-sk][data-en]').forEach(el => {
-        el.textContent = el.getAttribute('data-' + lang);
+        el.innerHTML = el.getAttribute('data-' + lang);
       });
 
-      // Persist user selection
-      localStorage.setItem('preferred_lang', lang);
+      // Update iframe language parameter dynamically
+      const iframe = document.getElementById('booqme-iframe');
+      if (iframe) {
+        iframe.src = lang === 'en' 
+          ? "https://booqme.app/en/rezervacia/poriadimesk" 
+          : "https://booqme.app/sk/rezervacia/poriadimesk";
+      }
+
+      // Save user preference
+      localStorage.setItem('poriadime_lang', lang);
     }
 
-    // Auto-detect saved language on initial load
+    // Load saved language on startup
     document.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('preferred_lang') || 'sk';
+      const savedLang = localStorage.getItem('poriadime_lang') || 'sk';
       setLanguage(savedLang);
     });
   </script>
-
 </body>
 </html>
